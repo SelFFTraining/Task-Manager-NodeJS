@@ -1,6 +1,6 @@
 const User = require('../models/users')
 const jwt = require('jsonwebtoken')
-const secretKey = "santoshtoken"
+const secretKey = process.env.JWT_SECRET
 const auth = async function (req, res, next) {
     try {
         const token = req.header('Authorization').replace('Bearer ','')
